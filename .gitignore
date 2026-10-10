@@ -1,0 +1,6 @@
+﻿target/
+data/
+.vs/
+.idea/
+*.iml
+.env

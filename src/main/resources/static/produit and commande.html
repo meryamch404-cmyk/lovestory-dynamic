@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produits & Commande</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f6efea;
+    color: #8B0000;
+    text-align: center;
+}
+
+header {
+    background:#8B0000;
+    color: #f6efea;
+    padding: 15px;
+    font-size: 40px;
+    font-family: 'Great Vibes', cursive;
+    font-weight: bold;
+    position: relative;
+}
+
+header img.logo {
+    position:absolute;
+    left:20px;
+    top:-9px;
+    width:100px;
+}
+
+.hero {
+    width: 90%;
+    height: 450px;
+    margin: 30px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    filter: brightness(0.7);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    color: white;
+    text-align: left;
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 17px;
+}
+
+.hero-text p.description {
+    font-family: 'Allura', cursive;
+    font-size: 20px;
+    color: white;
+    margin: 30px auto;
+    line-height: 1.5;
+}
+
+button.hero-btn {
+    padding: 10px 20px;
+    background: #8B0000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button.hero-btn:hover {
+    opacity: 0.8;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding-top: 15px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.products .product h3,
+.products .product p {
+    color:  #8B0000;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product input {
+    width: 60px;
+    padding: 5px;
+}
+
+button {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #8B0000;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#recap {
+    margin-top: 40px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    color: black;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.actions button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.actions button.reset {
+    background-color: red;
+}
+
+.actions button.validate {
+    background-color: green;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo1.png" class="logo">
+    Love Story
+</header>
+
+<div class="hero">
+    <img src="image.jpg" alt="Love Story Couple Hoodies">
+    <div class="hero-text">
+        <h1>
+            LOVE STORY<br>
+            COUPLE HOODIES
+        </h1>
+        <p class="description">
+            Chaque histoire d'amour mérite d'être célébrée  
+            Découvrez nos capuches.
+        </p>
+        <button class="hero-btn" onclick="scrollToProducts()">Shop Now</button>
+    </div>
+</div>
+
+<div class="container" id="products">
+    <h2>Nos Produits</h2>
+
+    <div class="products">
+
+        <div class="product" data-name="Black Love Hoodie" data-price="90">
+            <img src="noir.png" alt="Shadow Love Hoodie Noir">
+            <h3>Black Love Hoodie</h3>
+            <p>Noir avec design blanc, douce et confortable.</p>
+            <p><strong>Matière :</strong> 80 % coton naturel, 20 % polyester</p>
+            <strong>90 DT</strong><br>
+            <input type="number" min="1" max="15" value="1">
+            <button onclick="addToCart(this)">Ajouter</button>
+        </div>
+
+        <div class="product" data-name="White Love Hoodie" data-price="90">
+            <img src="blanc1.png" alt="Pure Love Hoodie Blanc">
+            <h3>White Love Hoodie</h3>
+            <p>Blanc avec design bordeaux, douce et confortable.</p>
+            <p><strong>Matière :</strong> 80 % coton naturel, 20 % polyester</p>
+            <strong>90 DT</strong><br>
+            <input type="number" min="1" max="15" value="1">
+            <button onclick="addToCart(this)">Ajouter</button>
+        </div>
+
+        <div class="product" data-name="Green Love Hoodie" data-price="90">
+            <img src="vert.png" alt="Emerald Love Hoodie Vert">
+            <h3>Green Love Hoodie</h3>
+            <p>Vert avec design blanc, douce et confortable.</p>
+            <p><strong>Matière :</strong> 80 % coton naturel, 20 % polyester</p>
+            <strong>90 DT</strong><br>
+            <input type="number" min="1" max="15" value="1">
+            <button onclick="addToCart(this)">Ajouter</button>
+        </div>
+
+        <div class="product" data-name="Purple Love Hoodie" data-price="90">
+            <img src="violet.png" alt="Purple Love Hoodie">
+            <h3>Purple Love Hoodie</h3>
+            <p>Violet avec design noir, douce et confortable.</p>
+            <p><strong>Matière :</strong> 80 % coton naturel, 20 % polyester</p>
+            <strong>90 DT</strong><br>
+            <input type="number" min="1" max="15" value="1">
+            <button onclick="addToCart(this)">Ajouter</button>
+        </div>
+
+    </div>
+
+    <div id="recap">
+        <h2>Récapitulatif de commande</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix</th>
+                    <th>Sous-total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="recapTable"></tbody>
+        </table>
+        <h3>Total : <span id="total">0</span> DT</h3>
+
+        <div class="actions">
+            <button class="reset" onclick="resetCart()">Réinitialiser</button>
+            <button class="validate" onclick="validateOrder()">Valider la commande</button>
+        </div>
+    </div>
+</div>
+
+<script>
+let cart = {};
+
+function addToCart(btn) {
+  const product = btn.parentElement;
+  const name = product.dataset.name;
+  const price = Number(product.dataset.price);
+  const qty = Number.parseInt(product.querySelector("input").value, 10);
+  if (!Number.isInteger(qty) || qty < 1 || qty > 15) return alert("Quantité invalide (1 à 15).");
+  if (!cart[name]) cart[name] = {price, qty: 0};
+  if (cart[name].qty + qty > 15) return alert("Maximum 15 unités par produit.");
+  cart[name].qty += qty;
+  updateRecap();
+}
+function updateRecap() {
+  const recap = document.getElementById("recapTable");
+  recap.replaceChildren();
+  let total = 0;
+  for (const [name, item] of Object.entries(cart)) {
+    const subtotal = item.price * item.qty; total += subtotal;
+    const tr = document.createElement("tr");
+    [name, String(item.qty), item.price + " DT", subtotal + " DT"].forEach(value => {
+      const td = document.createElement("td"); td.textContent = value; tr.appendChild(td);
+    });
+    const action = document.createElement("td");
+    const remove = document.createElement("button"); remove.textContent = "Supprimer";
+    remove.addEventListener("click", () => removeItem(name));
+    action.appendChild(remove); tr.appendChild(action); recap.appendChild(tr);
+  }
+  document.getElementById("total").textContent = total.toFixed(2);
+}
+function modifyQty(name, qty) {
+  qty = Number.parseInt(qty, 10);
+  if (!Number.isInteger(qty) || qty < 1 || qty > 15) return alert("Quantité invalide.");
+  cart[name].qty = qty; updateRecap();
+}
+function removeItem(name) { delete cart[name]; updateRecap(); }
+function resetCart() { cart = {}; updateRecap(); }
+async function validateOrder() {
+  if (!Object.keys(cart).length) return alert("Votre panier est vide !");
+  const customerName = prompt("Votre nom complet :");
+  if (!customerName || !customerName.trim()) return;
+  const email = prompt("Votre adresse e-mail :");
+  if (!email || !email.includes("@")) return alert("Veuillez saisir une adresse e-mail valide.");
+  const phone = prompt("Votre numéro de téléphone (facultatif) :") || "";
+  const items = Object.entries(cart).map(([name, item]) => ({name, quantity:item.qty}));
+  try {
+    const response = await fetch("/api/orders", {
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({customerName, email, phone, items})
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.message || result.detail || "Commande non enregistrée.");
+    alert(result.message + "\nNuméro de commande : " + result.orderId + "\nTotal : " + result.total + " DT");
+    resetCart();
+  } catch (err) {
+    alert("Erreur : " + err.message + "\nVérifiez que le site est lancé depuis Spring Boot.");
+  }
+}
+function scrollToProducts() {
+  document.getElementById("products").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

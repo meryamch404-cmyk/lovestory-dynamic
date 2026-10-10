@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Story</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f6efea;
+    color: #8B0000;
+    padding-top: 0; 
+}
+
+
+.header {
+    background: #8B0000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; 
+    height: 80px; 
+    position: relative;
+    overflow: hidden;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-20deg);
+    animation: flash 2s infinite;
+}
+
+@keyframes flash {
+    0% { left: -100%; }
+    100% { left: 150%; }
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+}
+
+.header-left img.logo {
+    width: 80px; 
+}
+
+.profil-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo-profil {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.nom {
+    margin-top: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+.header-center h1 {
+    margin: 0;
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px; 
+    color: white;
+}
+
+.header-right {
+    display: flex;
+    gap: 15px; 
+}
+
+.header-right a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.header-right a:hover {
+    text-decoration: underline;
+}
+
+
+.hero-image {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+.description {
+    font-family: 'Allura', cursive;
+    font-size: 25px;
+    text-align: center;
+    color: #8B0000;
+    margin: 30px auto;
+    line-height: 1.5;
+}
+
+
+.reseaux-sociaux {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.social-icons img {
+    width: 50px;
+    margin: 10px;
+}
+
+
+footer {
+    background: #8B0000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+<header class="header">
+    <div class="header-left">
+        <img src="logo1.png" class="logo" alt="Logo">
+        <div class="profil-container">
+            <img src="m.jpg" class="photo-profil" alt="Profil">
+            <div class="nom">Mariem Chibeni</div>
+        </div>
+    </div>
+
+    <div class="header-center">
+        <h1>Love Story</h1>
+    </div>
+
+    <div class="header-right">
+        <a href="acc.html">Accueil</a>
+        <a href="inscription.html">Inscription</a>
+        <a href="produit and commande.html">Produits & Commandes</a>
+    </div>
+</header>
+
+<p class="description">
+Chaque histoire d'amour mérite d'être célébrée  
+Découvrez nos capuches.
+</p>
+
+
+<img src="image.jpg" class="hero-image" alt="Love Story">
+
+<section class="reseaux-sociaux">
+    <h2>Suivez-nous</h2>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/people/LoveStoryshop55/61584610358916/" target="_blank">
+            <img src="logoFB.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/lovestory_shop55" target="_blank">
+            <img src="logoinsta.png" alt="Instagram">
+        </a>
+    </div>
+</section>
+
+<footer>
+Email : meryamch404@gmail.com — WhatsApp : +216 53 216 746 <br>
+© 2025 Love Story — Tous droits réservés
+</footer>
+
+</body>
+</html>
+
+
+
+
